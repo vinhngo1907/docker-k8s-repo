@@ -1,34 +1,34 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon",
-    "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vinhngo1907/docker-repo.git"
-  },
-  "keywords": [
-    "docker",
-    "k8s",
-    "nodejs"
-  ],
-  "author": "Vinh Ngo",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vinhngo1907/docker-repo/issues"
-  },
-  "homepage": "https://github.com/vinhngo1907/docker-repo#readme",
-  "dependencies": {
-    "express": "4.16.3",
-    "pg": "8.0.3",
-    "redis": "2.8.0",
-    "cors": "2.8.4",
-    "nodemon": "1.18.3",
-    "body-parser": "*"
-  }
+	"name": "server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "nodemon",
+		"start": "node index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vinhngo1907/docker-repo.git"
+	},
+	"keywords": [
+		"docker",
+		"k8s",
+		"nodejs"
+	],
+	"author": "Vinh Ngo",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/vinhngo1907/docker-repo/issues"
+	},
+	"homepage": "https://github.com/vinhngo1907/docker-repo#readme",
+	"dependencies": {
+		"express": "4.16.3",
+		"pg": "8.0.3",
+		"redis": "2.8.0",
+		"cors": "2.8.4",
+		"nodemon": "1.18.3",
+		"body-parser": "*"
+	}
 }
