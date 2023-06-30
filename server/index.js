@@ -8,7 +8,7 @@ app.use(bodyParser());
 app.use(cors());
 
 // Posgres client setup
-const {Pool} =require("pg");
+const { Pool } = require("pg");
 const pgClient = new Pool({
     user: keys.pgUser,
     host: keys.pgHost,
@@ -17,10 +17,10 @@ const pgClient = new Pool({
     port: keys.pgPort
 });
 
-pgClient.on("connect", (client)=>{
+pgClient.on("connect", (client) => {
     client
-    .query("CREATE TABLE IF NOT EXIST values (number INT)")
-    .catch((err)=>console.log(err));
+        .query("CREATE TABLE IF NOT EXIST values (number INT)")
+        .catch((err) => console.log(err));
 })
 
 // Redis client setup
@@ -33,7 +33,12 @@ const redisClient = redis.createClient({
 
 const redisPublisher = redisClient.duplicate();
 
-// Express routes handler
+// Express route handlers
+
+app.get("/", (req, res) => {
+    res.send("Hi");
+});
+
 app.listen(5000, (err) => {
     console.log("Listening");
 })
