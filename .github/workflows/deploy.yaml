@@ -23,7 +23,7 @@ jobs:
         run: docker build -t stephengrider/multi-client ./client
 
       - name: Build multi-nginx image
-        run: docker build -t stephengrider/multi-nginx ./nginx
+        run: docker build -t stephengrider/multi-nginx ./client/nginx
 
       - name: Build multi-server image
         run: docker build -t stephengrider/multi-server ./server
