@@ -14,34 +14,34 @@ jobs:
             password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build image for testing React client    
-        run: docker build -t vinhngo1999/react-test -f ./client/Dockerfile.dev ./client
+        run: docker build -t stephengrider/react-test -f ./client/Dockerfile.dev ./client
 
       - name: Testing React client
-        run: docker run -e CI=true vinhngo1999/react-test npm test
+        run: docker run -e CI=true stephengrider/react-test npm test
 
       - name: Build multi-client image
-        run: docker build -t vinhngo1999/multi-client ./client
+        run: docker build -t stephengrider/multi-client ./client
 
       - name: Build multi-nginx image
-        run: docker build -t vinhngo1999/multi-nginx ./nginx
+        run: docker build -t stephengrider/multi-nginx ./nginx
 
       - name: Build multi-server image
-        run: docker build -t vinhngo1999/multi-server ./server
+        run: docker build -t stephengrider/multi-server ./server
 
       - name: Build multi-worker image
-        run: docker build -t vinhngo1999/multi-worker ./worker
+        run: docker build -t stephengrider/multi-worker ./worker
 
       - name: Pushing multi-client to Docker Hub
-        run: docker push vinhngo1999/multi-client
+        run: docker push stephengrider/multi-client
 
       - name: Pushing multi-nginx to Docker Hub
-        run: docker push vinhngo1999/multi-nginx
+        run: docker push stephengrider/multi-nginx
 
       - name: Pushing multi-server to Docker Hub
-        run: docker push vinhngo1999/multi-server
+        run: docker push stephengrider/multi-server
 
       - name: Pushing multi-worker to Docker Hub
-        run: docker push vinhngo1999/multi-worker
+        run: docker push stephengrider/multi-worker
   # deploy:
   #   runs-on: ubuntu-20.04
   #   needs: [build]
