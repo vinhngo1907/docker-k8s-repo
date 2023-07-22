@@ -42,21 +42,21 @@ jobs:
 
       - name: Pushing multi-worker to Docker Hub
         run: docker push stephengrider/multi-worker
-  # deploy:
-  #   runs-on: ubuntu-20.04
-  #   needs: [build]
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Zipping deploy
-  #       run: zip -r deploy.zip . -x '*.git*'
-  #     - uses: einaregilsson/beanstalk-deploy@v18
-        # with:
+  deploy:
+    runs-on: ubuntu-20.04
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Zipping deploy
+        run: zip -r deploy.zip . -x '*.git*'
+      - uses: einaregilsson/beanstalk-deploy@v18
+        with:
         #   aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
         #   aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-        #   application_name: complex-docker
-        #   environment_name: Complexdocker-env
+          application_name: complex-docker
+          environment_name: Complexdocker-env
         #   existing_bucket_name: elasticbeanstalk-us-east-1-858201713588
-        #   region: us-east-1
+          region: us-east-1
         #   version_label: ${{ github.sha }}
-        #   deployment_package: deploy.zip  
+          deployment_package: deploy.zip  
         
